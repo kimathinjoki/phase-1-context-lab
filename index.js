@@ -1,5 +1,49 @@
 /* Your Code Here */
 
+function createEmployeeRecord(array){
+    const eRecord = {
+        firstName:`${array[0]}`,
+        familyName:`${array[1]}`,
+        title:`${array[2]}`,
+        payPerHour:array[3],
+        timeInEvents:[],
+        timeOutEvents:[]
+
+    }
+    return eRecord
+}
+
+function createEmployeeRecords(data){
+    const obj = []
+    for(let i =0 ; i <data.length; i++){
+        obj.push(createEmployeeRecord(data[i]))
+    }
+    return obj
+}
+
+function createTimeInEvent(date,employeeRec = createEmployeeRecord(Array) ){
+    const timeInObj = {type:"TimeIn",hour:date.split(' ')[1],date:date.split(' ')[0]}
+    // const  elem = createEmployeeRecord(Array)
+    // elem.timeInEvents = timeInObj
+    const UpElem = emplyeeRec.timeInEvents = timeInObj
+
+    return UpElem
+
+}
+
+function createTimeOutEvent(date){
+    const timeOutObj ={type:"TimeIn",hour:date.split(' ')[1],date:date.split(' ')[0]}
+    return timeOutObj
+
+}
+
+function hoursWorkedOnDate(date){
+
+    const hoursWorked = Number(createTimeOutEvent(date)) - Number(createTimeInEvent(date).hour)
+    return hoursWorked
+
+}
+
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
